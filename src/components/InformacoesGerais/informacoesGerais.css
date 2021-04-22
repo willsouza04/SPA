@@ -1,0 +1,48 @@
+.informacoesGerais {
+    grid-area:geral;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 5% 5%;
+}
+
+.informacoesGerais-grid-container {
+    display: grid;
+    grid-template-columns: minmax(100px, 37%) minmax(155px, 63%);
+    grid-template-rows: minmax(40px, 16%) minmax(100px, 42%) minmax(100px, 42%);
+    grid-template-areas:
+		"titulo titulo"
+		"icon nome"
+		"contato contato"
+		;
+    grid-gap: 5%;
+}
+
+.informacoesGerais-titulo {
+    grid-area: titulo;
+    text-align: left;
+}
+  
+.informacoesGerais-icon {
+    grid-area: icon;
+    background-color: #969696;
+    border-radius: 50%;
+    display: table;
+    height: 100px;
+    width: 100px;   
+}
+
+.informacoesGerais-icon span {
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.informacoesGerais-Nome {
+    grid-area: nome;
+}
+
+.informacoesGerais-Contato {
+    grid-area: contato;
+}

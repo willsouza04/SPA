@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.App-top {
+  height: 48px;
+  background-color: #4478e0;
+}
+
+.App-grid-container {
+  display: grid;
+  grid-template-columns: minmax(300px, 25%) minmax(300px, 25%) auto;
+  grid-template-rows: minmax(300px, 35%) minmax(100px, 25%) minmax(300px, 35%);
+  grid-template-areas:
+		"geral local atividade"
+		"oportunidade credito atividade"
+		"venda titulo atividade"
+		;
+  grid-gap: 10px;
+  padding: 20px;
+}
