@@ -1,6 +1,6 @@
 {
    "cliente_id":"1111",
-   "nome":"Justine Robinson",
-   "telefone":"45995555555",
-   "email":"justine@email.com"
+   "endereco":"R. Pres. Bernardes, 2009",
+   "tipo":"Trabalho",
+   "localizacao":[-24.956693505050723, -53.46577436929236]
  }

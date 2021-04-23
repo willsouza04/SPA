@@ -10,43 +10,66 @@
 .local-grid-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 30px 30px;
+    grid-template-rows: 30px 180px 60px;
     grid-template-areas:
-		"Credtitulo"
-		"Credvalores"
+		"localtitulo"
+		"localmap"
+        "localendereco"
 		;
-    grid-gap: 15px;
 }
 
 .local-titulo {
-    grid-area: Credtitulo;
+    grid-area: localtitulo;
     text-align: left;
     font-size: 21px;
     line-height: normal;
 }
 
-.box {
-    margin: 8%;
-    background-color: #ffffff;
-    border-radius: 3px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    padding: 10px 25px;
+.local-map {
+    grid-area: localmap;
 }
-.box-icon {
-    background-color: #969696;
-    border-radius: 50%;
-    display: table;
-    height: 100px;
-    width: 100px;    
-    margin: 8% auto;
+
+
+.local-endereco {
+    grid-area: localendereco;
+
 }
-.box-icon span {
-    color: #fff;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
+
+.local-endereco-grid-container {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: 30px 30px ;
+    grid-template-areas:
+		"enderecoicon endereco"
+		"enderecoicon tipoendereco"
+		;
 }
-.titulo {
-    margin: 4%;
+
+.local-endereco-icon {    
+    grid-area: enderecoicon;    
+    color: rgb(82, 80, 80);   
+    font-size: 18px;    
+    margin: auto;
+}
+
+.local-endereco-endereco {    
+    grid-area: endereco;
+}
+
+.local-endereco-tipo {    
+    grid-area: tipoendereco;
+}
+
+.local-valores-all {    
     text-align: left;
+    margin: auto 0 0 0; 
+    font-size: 14px;
+    line-height: normal;
+}
+
+.local-valores-value { 
+    text-align: left;
+    margin: 0 0 auto 0;
+    font-size: 12px;
+    line-height: normal;
 }

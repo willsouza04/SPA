@@ -5,29 +5,7 @@ class Local extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            latitude: null,
-            longitude: null,
-            userAddress: null
-        };
-        this.getLocation = this.getLocation.bind(this);
-        this.getCoordinates = this.getCoordinates.bind(this);
-    }
-
-    getLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(this.getCoordinates);
-        } else {
-          alert("Geolocation is not supported by this browser.");
-        }
-    }
-
-    getCoordinates(position) {
-        console.log(position.coords.latitude);
-        this.setState({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-        })
+        this.API_KEY="AIzaSyBqcvUh_AYttIX3YKAmn7qSRRWQdhPb5vQ";
     }
     
     render() {
@@ -37,14 +15,25 @@ class Local extends Component {
                     <div className="local-titulo">
                         <span>Local</span>
                     </div>
-                    <button onClick={this.getLocation}>Get coordinates</button>
-                    <p>Latitude:{this.state.latitude}</p>
-                    <p>Longitude:{this.state.longitude}</p>
-                    {
-                        this.state.latitude && this.state.longitude ?
-                        <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&markers=color:red%7C${this.state.latitude},${this.state.longitude}&key=AIzaSyBqcvUh_AYttIX3YKAmn7qSRRWQdhPb5vQ`} alt=''/>
-                        : null
-                    }
+                    <div className="local-map">
+                        <img 
+                            src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.props.json.local.localizacao[0]},${this.props.json.local.localizacao[1]}&zoom=16&size=270x180&sensor=false&markers=color:red%7C${this.props.json.local.localizacao[0]},${this.props.json.local.localizacao[1]}&key=${this.API_KEY}`} 
+                            alt=''
+                        />
+                    </div>
+                    <div className="local-endereco">
+                        <div className="local-endereco-grid-container">
+                            <div className="local-endereco-icon">
+                                <span><i className="fa fa-map-marker"></i></span>
+                            </div>
+                            <div className="local-valores-all local-endereco-endereco">
+                                <span>{this.props.json.local.endereco}</span>
+                            </div>
+                            <div className="local-valores-value local-endereco-tipo">
+                                <span>{this.props.json.local.tipo}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>  
                 
             </div>     
