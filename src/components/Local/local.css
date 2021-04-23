@@ -1,3 +1,30 @@
+.local {
+    color: #383838;
+    grid-area:local;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 15px 5%;
+}
+
+.local-grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30px 30px;
+    grid-template-areas:
+		"Credtitulo"
+		"Credvalores"
+		;
+    grid-gap: 15px;
+}
+
+.local-titulo {
+    grid-area: Credtitulo;
+    text-align: left;
+    font-size: 21px;
+    line-height: normal;
+}
+
 .box {
     margin: 8%;
     background-color: #ffffff;

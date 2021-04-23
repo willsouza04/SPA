@@ -2,6 +2,7 @@
   "id":"1111",
   "nome":"Justine Robinson",
   "apelido":"Acme inc",
+  "ativo":true,
   "telefone":"45995555555",
   "email":"justine@email.com"
 }

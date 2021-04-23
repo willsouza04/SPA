@@ -1,0 +1,5 @@
+{
+    "meses":["Fevereiro", "Março", "Abril"],
+    "quantidade":[23, 12, 15],
+    "valor":[1500, 1000, 1200]    
+}

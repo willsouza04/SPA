@@ -1,0 +1,187 @@
+.atividades {
+    color: #383838;
+    grid-area:atividade;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 15px 15px;
+}
+
+.atividades-grid-container {
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30px 36px 690px;
+    grid-template-areas:
+		"Ativtitulo"
+        "Ativagrupamentos"
+		"Ativvalores"
+		;
+    grid-gap: 15px;
+}
+
+.atividades-titulo {
+    grid-area: Ativtitulo;
+    text-align: left;
+    font-size: 21px;
+    line-height: normal;
+}
+
+.atividades-agrupamento {
+    grid-area: Ativagrupamentos;
+}
+
+.atividades-agrupamentos-grid-container {
+    display: grid;
+    grid-template-columns: 36px minmax(34px, auto) 36px minmax(71px, auto) 36px minmax(108px, auto) 36px minmax(63px, auto) 36px minmax(78px, auto);
+    grid-template-rows: 36px;
+    grid-template-areas:
+		"grupototal total grupoatraso atraso grupoandamento andamento grupoprevistas previstas grupoconcluidas concluidas"
+		;
+    grid-gap: 4px;
+}
+
+.atividades-agrupamentos-all {    
+    text-align: left;
+    margin: auto 0; 
+    font-size: 16px;
+    line-height: normal;
+}
+
+.atividades-agrupamentos-total-count {   
+    grid-area: grupototal;
+    background-color: #242424;
+}
+
+.atividades-agrupamentos-total {   
+    grid-area: total;
+}
+
+.atividades-agrupamentos-atraso-count {   
+    grid-area: grupoatraso;
+    background-color: #be2c2c;
+}
+
+.atividades-agrupamentos-atraso {   
+    grid-area: atraso;
+}
+
+.atividades-agrupamentos-andamento-count {   
+    grid-area: grupoandamento;
+    background-color: #1f64be;
+}
+
+.atividades-agrupamentos-andamento {   
+    grid-area: andamento;
+}
+
+.atividades-agrupamentos-previstas-count {   
+    grid-area: grupoprevistas;
+    background-color: #e07218;
+}
+
+.atividades-agrupamentos-previstas {   
+    grid-area: previstas;
+}
+
+.atividades-agrupamentos-concluidas-count {   
+    grid-area: grupoconcluidas;
+    background-color: #2b9c35;
+}
+
+.atividades-agrupamentos-concluidas {   
+    grid-area: concluidas;
+}
+
+.atividades-valores {
+    grid-area: Ativvalores;
+}
+
+.atividades-valores-all {    
+    text-align: left;
+    margin: 0 0 auto 0;
+    font-size: 16px;
+    line-height: normal;
+}
+
+.atividades-valores-value { 
+    text-align: left;
+    margin: 0 0 auto 0;
+    font-size: 13px;
+    line-height: normal;
+}
+
+.atividades-valores-all-grid-container {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: 30px;
+    grid-template-areas:
+		"valicon valdescription"
+		;
+    grid-gap: 10px;
+    padding: 5px 5px;
+}
+
+.atividades-valores-all-icon {       
+    grid-area: valicon;     
+    font-size: 24px; 
+    margin: auto;
+}
+
+.atividades-valores-all-description {          
+    grid-area: valdescription; 
+    color: #383838; 
+    text-align: left;
+    margin: auto 0;
+
+}
+
+.atividades-valores-grid-container {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: 22px 18px 18px;
+    grid-template-areas:
+		"ativicon ativdescricao"
+        "ativicon ativcontato"
+        "ativicon ativdata"
+		;
+    grid-gap: 0 10px;
+    padding: 10px 15px 10px 50px;
+}
+
+.atividades-valores-atraso {    
+    color: rgb(214, 39, 39); 
+}
+
+.atividades-valores-andamento {    
+    color: #1f64be;
+}
+
+.atividades-valores-previstas {  
+    color: #e07218;
+}
+
+.atividades-valores-concluidas {    
+    color: #2b9c35;
+}
+
+.atividades-valores-icon {
+    grid-area: ativicon;     
+    font-size: 24px;    
+    margin: auto;
+}
+
+.atividades-valores-descricao {
+    grid-area: ativdescricao;
+    color: #383838;
+}
+
+.atividades-valores-contato {
+    grid-area: ativcontato;
+    color: #383838;
+}
+
+.atividades-valores-data {
+    grid-area: ativdata;
+    color: #383838;
+}

@@ -1,0 +1,144 @@
+.oportunidades {
+    color: #383838;
+    grid-area:oportunidade;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 15px 5%;
+}
+
+.oportunidades-grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30px 100px 30px;
+    grid-template-areas:
+		"OPtitulo"
+		"OPvalores"
+		"OPlink"
+		;
+    grid-gap: 5px 5%;
+}
+
+.oportunidades-titulo {
+    grid-area: OPtitulo;
+    text-align: left;
+    font-size: 21px;
+    line-height: normal;
+}
+
+.oportunidades-valores {
+    grid-area: OPvalores;
+} 
+
+.oportunidades-valores-grid-container {
+    display: grid;
+    grid-template-columns: minmax(36px, 14%) minmax(90px, 36%) minmax(36px, 14%) minmax(90px, 36%);
+    grid-template-rows: 25px 25px 25px 25px;
+    grid-template-areas:
+		"countganhas ganhas countperdidas perdidas"
+        "countganhas valueganhas countperdidas valueperdidas"
+		"countabertas abertas countdescartadas descartadas"
+        "countabertas valueabertas countdescartadas valuedescartadas"
+		;
+    grid-gap: 0 2%;
+} 
+
+.oportunidades-valores-all {    
+    text-align: left;
+    margin: auto 0 0 0; 
+    font-size: 16px;
+    line-height: normal;
+}
+
+.oportunidades-valores-value { 
+    text-align: left;
+    margin: 0 0 auto 0;
+    font-size: 12px;
+    line-height: normal;
+}
+
+.oportunidades-valores-ganhas-count {    
+    grid-area: countganhas;
+    background-color: #2b9c35;
+
+}
+
+.oportunidades-valores-ganhas {
+    grid-area: ganhas;
+}
+
+.oportunidades-valores-ganhas-valor {
+    grid-area: valueganhas;
+}
+
+.oportunidades-valores-perdidas-count {    
+    grid-area: countperdidas;
+    background-color: #be2c2c;
+
+}
+
+.oportunidades-valores-perdidas {
+    grid-area: perdidas;
+}
+
+.oportunidades-valores-perdidas-valor {
+    grid-area: valueperdidas;
+}
+
+.oportunidades-valores-abertas-count {    
+    grid-area: countabertas;
+    background-color: #1f64be;
+
+}
+
+.oportunidades-valores-abertas {
+    grid-area: abertas;
+}
+
+.oportunidades-valores-abertas-valor {
+    grid-area: valueabertas;
+}
+
+.oportunidades-valores-descartadas-count {    
+    grid-area: countdescartadas;
+    background-color: #242424;
+
+}
+
+.oportunidades-valores-descartadas {
+    grid-area: descartadas;
+}
+
+.oportunidades-valores-descartadas-valor {
+    grid-area: valuedescartadas;
+}
+
+.oportunidades-link {
+    grid-area: OPlink;
+    text-align: left;
+    margin: auto 0 0 0; 
+} 
+  
+.oportunidades-link-button {    
+    font-size: 12px;
+    background-color: #ffffff;
+    color:#4478e0;
+    border: #ffffff;;
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+.oportunidades-link-button:hover {
+    background-color: #dbeef0;
+    padding: 5px;
+}
+
+.oportunidades-link-button:active {
+    background-color: #b8d3e0;
+}
+
+.oportunidades-link-button:focus{
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}

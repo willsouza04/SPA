@@ -32,15 +32,21 @@ class Local extends Component {
     
     render() {
         return (            
-            <div>
-                <button onClick={this.getLocation}>Get coordinates</button>
-                <p>Latitude:{this.state.latitude}</p>
-                <p>Longitude:{this.state.longitude}</p>
-                {
-                    this.state.latitude && this.state.longitude ?
-                    <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&markers=color:red%7C${this.state.latitude},${this.state.longitude}&key=AIzaSyBqcvUh_AYttIX3YKAmn7qSRRWQdhPb5vQ`} alt=''/>
-                    : null
-                }
+            <div className="local">
+                <div className="local-grid-container"> 
+                    <div className="local-titulo">
+                        <span>Local</span>
+                    </div>
+                    <button onClick={this.getLocation}>Get coordinates</button>
+                    <p>Latitude:{this.state.latitude}</p>
+                    <p>Longitude:{this.state.longitude}</p>
+                    {
+                        this.state.latitude && this.state.longitude ?
+                        <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&markers=color:red%7C${this.state.latitude},${this.state.longitude}&key=AIzaSyBqcvUh_AYttIX3YKAmn7qSRRWQdhPb5vQ`} alt=''/>
+                        : null
+                    }
+                </div>  
+                
             </div>     
         );
     }
