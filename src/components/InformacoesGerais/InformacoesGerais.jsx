@@ -1,9 +1,16 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { busca } from '../../services/api'
 import "./informacoesGerais.css";
 
-class InformacoesGerais extends Component {
+const InformacoesGerais = ({url}) => {
 
-    render() {    
+    const [listacliente, setCliente] = useState([])    
+    useEffect(() => { 
+        busca(url, setCliente)
+    }, [])
+
+    if (listacliente.length){
+        const cliente = listacliente[0];
         return (
             <div className="informacoesGerais">                
                 <div className="informacoesGerais-grid-container"> 
@@ -16,14 +23,14 @@ class InformacoesGerais extends Component {
                     <div className="informacoesGerais-Identificacao">
                         <div className="informacoesGerais-Identificacao-grid-container">
                             <div className="informacoesGerais-Identificacao-Nome">
-                                <span>{this.props.json.cliente.nome}</span>
+                                <span>{cliente.nome}</span>
                             </div>
                             <div className="informacoesGerais-Identificacao-Apelido">
-                                <span>{this.props.json.cliente.apelido}</span>
+                                <span>{cliente.apelido}</span>
                             </div>
                             <div className="informacoesGerais-Identificacao-Ativo">
                                 {
-                                    this.props.json.cliente.ativo 
+                                    cliente.ativo 
                                         ?   <span className="Identificacao-Ativo">Ativo</span>
                                         :   <span className="Identificacao-Inativo">Inativo</span>
                                 }
@@ -36,7 +43,7 @@ class InformacoesGerais extends Component {
                                 <span><i className="fa fa-phone"></i></span>
                             </div>
                             <div className="informacoesGerais-Contato-Telefone-numero">
-                                <span>{this.props.json.cliente.telefone}</span>
+                                <span>{cliente.telefone}</span>
                             </div>
                             <div className="informacoesGerais-Contato-Telefone-descricao">
                                 <span>Telefone</span>
@@ -45,7 +52,7 @@ class InformacoesGerais extends Component {
                                 <span><i className="fa fa-envelope"></i></span>
                             </div>
                             <div className="informacoesGerais-Contato-Email-email">
-                                <span>{this.props.json.cliente.email}</span>
+                                <span>{cliente.email}</span>
                             </div>
                             <div className="informacoesGerais-Contato-Email-descricao">
                                 <span>E-mail</span>
@@ -55,7 +62,9 @@ class InformacoesGerais extends Component {
                 </div>
             </div>  
         );
-    }
+    };
+
+    return (<div></div>);
 }
 
 export default InformacoesGerais;

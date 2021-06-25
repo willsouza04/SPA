@@ -2,52 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.App-top-grid-container {
-  display: grid;
-  grid-template-columns: minmax(1260px, 100%);
-  grid-template-rows: 48px;
-  grid-template-areas:
-      "top"
-  ;
-}
-
 .App-top {
-  grid-area: top;
   height: 48px;
   background-color: #4478e0;
   font-size: 32px;
@@ -57,16 +12,33 @@
 }
 
 .App-grid-container {
-  display: grid;
-  grid-template-columns: minmax(300px, 25%) minmax(300px, 25%) minmax(600px, 50%);
-  grid-template-rows: 300px 200px 300px;
-  grid-template-areas:
-		"geral local atividade"
-		"oportunidade credito atividade"
-		"venda titulo atividade"
-		;
-  grid-gap: 10px;
-  padding: 20px;
+  display: flex;  
+  flex-wrap: wrap;
+}
+
+.App-grid-informacoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;  
+  width:50%;
+}
+
+.App-grid-atividades {
+  display: flex;
+  width:50%;
+}
+
+@media(max-width:1262px){
+  
+  .App-grid-informacoes {
+    display: flex;
+    width:100%;   
+  }
+  
+  .App-grid-atividades {
+    display: flex;
+    width:100%;
+  }
 }
 
 .App-valores-count {    

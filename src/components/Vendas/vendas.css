@@ -1,21 +1,30 @@
 .Vendas {
     color: #383838;
-    grid-area:venda;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    padding: 15px 5%;
+    width:47%;
+    margin-bottom: 15px;
+}
+
+@media(max-width:768px){  
+    .Vendas {
+        width:100%; 
+        margin: 0px 15px 15px 15px; 
+    }
 }
 
 .Vendas-grid-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 30px 125px;
+    grid-template-rows: 30px auto;
     grid-template-areas:
 		"Credtitulo"
 		"Credvalores"
 		;
-    grid-gap: 15px;
+    grid-gap: 15px;    
+    padding: 5%;
+    height: 86%;
 }
 
 .Vendas-titulo {

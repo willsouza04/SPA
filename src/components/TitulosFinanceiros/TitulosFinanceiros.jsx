@@ -1,9 +1,16 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { busca } from '../../services/api'
 import "./titulosFinanceiros.css";
 
-class TitulosFinanceiros extends Component {
+const TitulosFinanceiros = ({url}) => {
 
-    render() {    
+    const [listatitulos, setTitulos] = useState([])    
+    useEffect(() => { 
+        busca(url, setTitulos)
+    }, [])
+
+    if (listatitulos.length) {    
+        const titulos = listatitulos[0];
         return (
             <div className="titulosFinanceiros">                
                 <div className="titulosFinanceiros-grid-container"> 
@@ -13,28 +20,28 @@ class TitulosFinanceiros extends Component {
                     <div className="titulosFinanceiros-valores">
                         <div className="titulosFinanceiros-valores-grid-container">
                             <div className="App-valores-count titulosFinanceiros-valores-vencidos-count">
-                                <span>{this.props.json.titulos.vencidos[1]}</span>
+                                <span>{titulos.vencidos[1]}</span>
                             </div>
                             <div className="titulosFinanceiros-valores-all titulosFinanceiros-valores-ganhas">
-                            <span>R$ {this.props.json.titulos.vencidos[0]}</span>
+                            <span>R$ {titulos.vencidos[0]}</span>
                             </div>
                             <div className="titulosFinanceiros-valores-description titulosFinanceiros-valores-ganhas-description">
                                 <span>Vencidos</span>
                             </div>
                             <div className="App-valores-count titulosFinanceiros-valores-avencer-count">
-                                <span>{this.props.json.titulos.a_vencer[1]}</span>
+                                <span>{titulos.a_vencer[1]}</span>
                             </div>
                             <div className="titulosFinanceiros-valores-all titulosFinanceiros-avencer-ganhas">
-                            <span>R$ {this.props.json.titulos.a_vencer[0]}</span>
+                            <span>R$ {titulos.a_vencer[0]}</span>
                             </div>
                             <div className="titulosFinanceiros-valores-description titulosFinanceiros-valores-avencer-description">
                                 <span>A vencer</span>
                             </div>
                             <div className="App-valores-count titulosFinanceiros-valores-pagos-count">
-                                <span>{this.props.json.titulos.pagos[1]}</span>
+                                <span>{titulos.pagos[1]}</span>
                             </div>
                             <div className="titulosFinanceiros-valores-all titulosFinanceiros-pagos-ganhas">
-                            <span>R$ {this.props.json.titulos.pagos[0]}</span>
+                            <span>R$ {titulos.pagos[0]}</span>
                             </div>
                             <div className="titulosFinanceiros-valores-description titulosFinanceiros-valores-pagos-description">
                                 <span>Pagos</span>
@@ -44,7 +51,9 @@ class TitulosFinanceiros extends Component {
                 </div>  
             </div>  
         );
-    }
+    };
+
+    return (<div></div>);
 }
 
 export default TitulosFinanceiros;

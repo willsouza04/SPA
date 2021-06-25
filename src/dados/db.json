@@ -1,0 +1,119 @@
+{
+    "atividades":[
+        {
+            "cliente_id":"1111",
+            "descricao":"Ligação de agendamento da reunião",
+            "situacao":"Em atraso",
+            "tipo":"Ligação",
+            "contato":"Erica Collins" ,
+            "data":"Em atraso po 04 dias"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Reunião orçamento",
+            "situacao":"Prevista",
+            "tipo":"Reunião",
+            "contato":"Abigail Fisher",
+            "data":"Hoje às 15h"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Email Documentação",
+            "situacao":"Prevista",
+            "tipo":"Email",
+            "contato":"Jeffery King" ,
+            "data":"Amanhã às 15h"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Almoço coorporativo",
+            "situacao":"Prevista",
+            "tipo":"Agenda",
+            "contato":"Lawrence Kelly" ,
+            "data":"Amanhã às 15h"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Apresentação feira agrícola",
+            "situacao":"Concluída",
+            "tipo":"Agenda",
+            "contato":"Caroline Diaz" ,
+            "data":"Segunda-feira (17/09/2018) às 08h"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Email orçamento",
+            "situacao":"Concluída",
+            "tipo":"Email",
+            "contato":"Arthur Clark" ,
+            "data":"Terça-feira (18/09/2018) às 13h"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Email contrato",
+            "situacao":"Concluída",
+            "tipo":"Email",
+            "contato":"Frieda Howard" ,
+            "data":"Quarta-feira (19/09/2018) às 10h"
+        },
+        {
+            "cliente_id":"1111",
+            "descricao":"Ligação contrato",
+            "situacao":"Concluída",
+            "tipo":"Ligação",
+            "contato":"Caroline Diaz" ,
+            "data":"Quarta-feira (19/09/2018) às 13h"
+        }
+    ],
+    "cliente":[
+        {
+            "id":"1111",
+            "nome":"Justine Robinson Justine Robinson",
+            "apelido":"Acme inc",
+            "ativo":true,
+            "telefone":"45995555555",
+            "email":"justine@email.com"
+        }
+    ],
+    "limitecredito":[
+        {
+            "cliente_id":"1111",
+            "concedido":"12.000,20",
+            "disponivel":"3.105,00"
+        }
+    ],
+    "local":[
+        {
+            "cliente_id":"1111",
+            "endereco":"R. Pres. Bernardes, 2009",
+            "tipo":"Trabalho",
+            "localizacao":[-24.956693505050723, -53.46577436929236],
+            "api_key":"AIzaSyBqcvUh_AYttIX3YKAmn7qSRRWQdhPb5vQ"
+        }
+    ],
+    "oportunidades":[
+        {
+            "cliente_id":"1111",
+            "total":7,
+            "ganhas":[4,"R$ 20.000,00"],
+            "perdidas":[1,"R$ 4.300,00"],
+            "abertas":[2,"Diversas moedas"],
+            "descartadas":[0,""]
+        }
+    ],
+    "titulosfinanceiros":[
+        {
+            "cliente_id":"1111",
+            "vencidos":["3.105,00",1],
+            "a_vencer":["3.105,00",2],
+            "pagos":["3.105,00",2]
+        }
+    ],
+    "vendas":[
+        {
+            "meses":["Fevereiro", "Março", "Abril"],
+            "quantidade":[23, 12, 15],
+            "valor":[1500, 1000, 1200]    
+        }
+    ]
+}

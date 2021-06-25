@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { busca } from '../../services/api'
 import "./local.css";
 
-class Local extends Component {
-
-    constructor(props) {
-        super(props);
-        this.API_KEY="AIzaSyBqcvUh_AYttIX3YKAmn7qSRRWQdhPb5vQ";
-    }
+const Local = ({url}) => {
     
-    render() {
+    const [listalocal, setLocal] = useState([])      
+    useEffect(() => { 
+        busca(url, setLocal)
+    }, [])
+
+    if (listalocal.length){
+        const local = listalocal[0];
         return (            
             <div className="local">
                 <div className="local-grid-container"> 
@@ -17,7 +19,7 @@ class Local extends Component {
                     </div>
                     <div className="local-map">
                         <img 
-                            src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.props.json.local.localizacao[0]},${this.props.json.local.localizacao[1]}&zoom=16&size=270x180&sensor=false&markers=color:red%7C${this.props.json.local.localizacao[0]},${this.props.json.local.localizacao[1]}&key=${this.API_KEY}`} 
+                            src={`https://maps.googleapis.com/maps/api/staticmap?center=${local.localizacao[0]},${local.localizacao[1]}&zoom=16&size=270x180&sensor=false&markers=color:red%7C${local.localizacao[0]},${local.localizacao[1]}&key=${local.api_key}`} 
                             alt=''
                         />
                     </div>
@@ -27,10 +29,10 @@ class Local extends Component {
                                 <span><i className="fa fa-map-marker"></i></span>
                             </div>
                             <div className="local-valores-all local-endereco-endereco">
-                                <span>{this.props.json.local.endereco}</span>
+                                <span>{local.endereco}</span>
                             </div>
                             <div className="local-valores-value local-endereco-tipo">
-                                <span>{this.props.json.local.tipo}</span>
+                                <span>{local.tipo}</span>
                             </div>
                         </div>
                     </div>
@@ -38,7 +40,9 @@ class Local extends Component {
                 
             </div>     
         );
-    }
+    };
+
+    return (<div></div>);
 }
 
 export default Local;
