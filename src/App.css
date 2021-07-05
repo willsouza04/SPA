@@ -1,41 +1,39 @@
-.App {
-  text-align: center;
-}
-
 .App-top {
+  color: #FAFAFA;
+  display: flex;
+  justify-content: space-between;
   height: 48px;
   background-color: #4478e0;
   font-size: 32px;
   text-align: left;
-  padding: 0 10px;
-  color: rgb(252, 252, 252);
+  padding: 0 20px;
 }
 
-.App-grid-container {
+.App-container {
   display: flex;  
   flex-wrap: wrap;
 }
 
-.App-grid-informacoes {
+.App-informacoes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;  
   width:50%;
 }
 
-.App-grid-atividades {
+.App-atividades {
   display: flex;
   width:50%;
 }
 
 @media(max-width:1262px){
   
-  .App-grid-informacoes {
+  .App-informacoes {
     display: flex;
     width:100%;   
   }
   
-  .App-grid-atividades {
+  .App-atividades {
     display: flex;
     width:100%;
   }

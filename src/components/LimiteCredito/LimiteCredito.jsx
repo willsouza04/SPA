@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
 import { busca } from '../../services/api'
 import "./limiteCredito.css";
+
+const Container = styled.div`
+    background-color: ${({theme}) => theme.body};
+    color: ${({ theme }) => theme.text};
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(${({theme}) => theme.shadow}, 0.16), 0 2px 10px 0 rgba(${({theme}) => theme.shadow}, 0.12);    
+    flex-grow: 1;
+`
 
 const LimiteCredito = ({url}) =>  {
 
@@ -12,7 +22,8 @@ const LimiteCredito = ({url}) =>  {
     if (listacredito.length) {  
         const credito = listacredito[0];  
         return (
-            <div className="limiteCredito">                
+            <div className="limiteCredito">  
+                <Container>          
                 <div className="limiteCredito-grid-container"> 
                     <div className="limiteCredito-titulo">
                             <span>Limite de Credito</span>
@@ -34,6 +45,7 @@ const LimiteCredito = ({url}) =>  {
                         </div>
                     </div>
                 </div>  
+                </Container>    
             </div>  
         );
     };

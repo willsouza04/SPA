@@ -1,94 +1,66 @@
 .informacoesGerais {
-    color: #383838;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
     width:47%;
-    height: 315px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.informacoesGerais-grid-container {
-    display: grid;
-    grid-template-columns: 60px minmax(15px, auto);
-    grid-template-rows: 40px 60px auto;
-    grid-template-areas:
-		"titulo titulo"
-		"icon identificacao"
-		"contato contato"
-		;
-    grid-gap: 5%;    
+.informacoesGerais-container {
+    display: flex;
+    flex-direction: column;
     padding: 5%;
     width: 90%;
-    height: 86%;
-}
-
-@media(max-width:768px){  
-    .informacoesGerais {
-        width:100%; 
-        margin: 15px; 
-    }
-
-    .informacoesGerais-grid-container {
-        height: 90%;
-    }
 }
 
 .informacoesGerais-titulo {
-    grid-area: titulo;
     text-align: left;
     font-size: 21px;
     line-height: normal;
 }
+
+.informacoesGerais-centro {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
   
 .informacoesGerais-icon {
-    grid-area: icon;
     background-color: #c0bdbd;
     border-radius: 50%;
     display: table;
     height: 60px;
     width: 60px;   
     font-size: 22px;
+    margin-right: 15px;
 }
 
 .informacoesGerais-icon span {
-    color: #fff;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
 }
 
 .informacoesGerais-Identificacao {
-    grid-area: identificacao;
     text-align: left;
     line-height: normal;
+    flex-grow: 1;
 }
 
-.informacoesGerais-Identificacao-grid-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 20px 20px 20px;
-    grid-template-areas:
-		"nome"
-		"apelido"
-		"ativo"
-		;        
+.informacoesGerais-Identificacao-container {
+    display: flex;
+    flex-direction: column; 
 }
 
 .informacoesGerais-Identificacao-Nome {
-    grid-area: nome;    
     font-size: 18px;
 }
 
 .informacoesGerais-Identificacao-Apelido {
-    grid-area: apelido;    
     font-size: 16px;
 }
 
 .informacoesGerais-Identificacao-Ativo {
-    grid-area: ativo;
-    color: #fff;   
     font-size: 12px;
 }
 
@@ -105,61 +77,62 @@
 }
 
 .informacoesGerais-Contato {
-    grid-area: contato;
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
 }
 
-.informacoesGerais-Contato-grid-container {
-    display: grid;
-    grid-template-columns: 40px auto;
-    grid-template-rows: 33px 34px 33px 34px;
-    grid-template-areas:
-		"iconPhone numero"
-		"iconPhone descricaoPhone"
-		"iconMail email"
-		"iconMail descricaoMail"
-		;        
-    grid-gap: 2px;
+.informacoesGerais-Contato-Telefone-container {
+    display: flex; 
 }
 
 .informacoesGerais-Contato-Telefone-icon {
-    grid-area: iconPhone;   
-    color: rgb(82, 80, 80);   
     font-size: 24px;    
-    margin: auto;
-    
+    margin-right: 20px;    
 }
 
-.informacoesGerais-Contato-Telefone-numero {
-    grid-area: numero;        
-    font-size: 14px; 
-    text-align: left;      
-    margin: auto 0 0 0;
+.informacoesGerais-Contato-Telefone-numero-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    flex-grow: 1;
 }
 
-.informacoesGerais-Contato-Telefone-descricao {
-    grid-area: descricaoPhone;       
-    font-size: 13px;
-    text-align: left;      
-    margin: 0 0 auto 0;
+.informacoesGerais-Contato-Telefone-numero {    
+    font-size: 14px;     
+}
+
+.informacoesGerais-Contato-Telefone-descricao {    
+    font-size: 13px;  
+}
+
+.informacoesGerais-Contato-Email-container {
+    display: flex;
 }
 
 .informacoesGerais-Contato-Email-icon {
-    grid-area: iconMail;         
-    color: rgb(82, 80, 80);   
     font-size: 24px; 
-    margin: auto;
+    margin-right: 15px; 
 }
 
-.informacoesGerais-Contato-Email-email {
-    grid-area: email;       
+.informacoesGerais-Contato-Email-email-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.informacoesGerais-Contato-Email-email { 
     font-size: 14px;
-    text-align: left;      
-    margin: auto 0 0 0;  
 }
 
-.informacoesGerais-Contato-Email-descricao {
-    grid-area: descricaoMail;       
-    font-size: 13px;
-    text-align: left;      
-    margin: 0 0 auto 0;
+.informacoesGerais-Contato-Email-descricao {    
+    font-size: 13px;     
+}
+
+@media(max-width:768px){  
+    .informacoesGerais {
+        width:100%; 
+        margin: 15px; 
+    }
 }

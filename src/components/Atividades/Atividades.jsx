@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
 import { busca } from '../../services/api'
 import "./atividades.css";
 
@@ -7,6 +9,18 @@ let atraso = 0;
 let andamento = 0;   
 let previstas = 0;   
 let concluidas = 0; 
+
+const Container = styled.div`
+    background-color: ${({theme}) => theme.body};
+    color: ${({ theme }) => theme.text};
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(${({theme}) => theme.shadow}, 0.16), 0 2px 10px 0 rgba(${({theme}) => theme.shadow}, 0.12);    
+    flex-grow: 1;
+`;
+
+const ContainerLabel = styled.div`
+    color: ${({ theme }) => theme.text};
+`
 
 const Atividades = ({url}) => {  
 
@@ -21,52 +35,54 @@ const Atividades = ({url}) => {
         contabilizarGrupos(atividades);
 
         return (
-            <div className="atividades">                
-                <div className="atividades-grid-container"> 
-                    <div className="atividades-titulo">
-                        <span>Atividades</span>
-                    </div>
-                    <div className="atividades-agrupamentos">
-                        <div className="atividades-agrupamentos-grid-container">
-                            <div className="App-valores-count atividades-agrupamentos-total-count">
-                                <span>{total}</span>
-                            </div>
-                            <div className="atividades-agrupamentos-all tividades-agrupamentos-total">
-                                <span>Total</span>
-                            </div>
-                            <div className="App-valores-count atividades-agrupamentos-atraso-count">
-                                <span>{atraso}</span>
-                            </div>
-                            <div className="atividades-agrupamentos-all tividades-agrupamentos-atraso">
-                                <span>Em atraso</span>
-                            </div>
-                            <div className="App-valores-count atividades-agrupamentos-andamento-count">
-                                <span>{andamento}</span>
-                            </div>
-                            <div className="atividades-agrupamentos-all tividades-agrupamentos-andamento">
-                                <span>Em andamento</span>
-                            </div>
-                            <div className="App-valores-count atividades-agrupamentos-previstas-count">
-                                <span>{previstas}</span>
-                            </div>
-                            <div className="atividades-agrupamentos-all tividades-agrupamentos-previstas">
-                                <span>Previstas</span>
-                            </div>
-                            <div className="App-valores-count atividades-agrupamentos-concluidas-count">
-                                <span>{concluidas}</span>
-                            </div>
-                            <div className="atividades-agrupamentos-all tividades-agrupamentos-concluidas">
-                                <span>Concluídas</span>
+            <div className="atividades"> 
+                <Container>               
+                    <div className="atividades-grid-container"> 
+                        <div className="atividades-titulo">
+                            <span>Atividades</span>
+                        </div>
+                        <div className="atividades-agrupamentos">
+                            <div className="atividades-agrupamentos-grid-container">
+                                <div className="App-valores-count atividades-agrupamentos-total-count">
+                                    <span>{total}</span>
+                                </div>
+                                <div className="atividades-agrupamentos-all tividades-agrupamentos-total">
+                                    <span>Total</span>
+                                </div>
+                                <div className="App-valores-count atividades-agrupamentos-atraso-count">
+                                    <span>{atraso}</span>
+                                </div>
+                                <div className="atividades-agrupamentos-all tividades-agrupamentos-atraso">
+                                    <span>Em atraso</span>
+                                </div>
+                                <div className="App-valores-count atividades-agrupamentos-andamento-count">
+                                    <span>{andamento}</span>
+                                </div>
+                                <div className="atividades-agrupamentos-all tividades-agrupamentos-andamento">
+                                    <span>Em andamento</span>
+                                </div>
+                                <div className="App-valores-count atividades-agrupamentos-previstas-count">
+                                    <span>{previstas}</span>
+                                </div>
+                                <div className="atividades-agrupamentos-all tividades-agrupamentos-previstas">
+                                    <span>Previstas</span>
+                                </div>
+                                <div className="App-valores-count atividades-agrupamentos-concluidas-count">
+                                    <span>{concluidas}</span>
+                                </div>
+                                <div className="atividades-agrupamentos-all tividades-agrupamentos-concluidas">
+                                    <span>Concluídas</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="atividades-valores">
-                        {retornaAtividades(atividades, "Em atraso", "atividades-valores-atraso", "Atividades em atraso")}
-                        {retornaAtividades(atividades, "Em andamento", "atividades-valores-andamento", "Atividades em andamento")}
-                        {retornaAtividades(atividades, "Prevista", "atividades-valores-previstas", "Atividades Previstas")}
-                        {retornaAtividades(atividades, "Concluída", "atividades-valores-concluidas", "Atividades Concluídas")}
-                    </div>    
-                </div>  
+                        <div className="atividades-valores">
+                            {retornaAtividades(atividades, "Em atraso", "atividades-valores-atraso", "Atividades em atraso")}
+                            {retornaAtividades(atividades, "Em andamento", "atividades-valores-andamento", "Atividades em andamento")}
+                            {retornaAtividades(atividades, "Prevista", "atividades-valores-previstas", "Atividades Previstas")}
+                            {retornaAtividades(atividades, "Concluída", "atividades-valores-concluidas", "Atividades Concluídas")}
+                        </div>    
+                    </div>  
+                </Container>
             </div>  
         );
     };
@@ -127,9 +143,11 @@ function retornaAtividades (atividades, situacao, classe, descricao) {
                 <div className="atividades-valores-all-icon">
                 <   span><i className="fa fa-circle"></i></span>
                 </div>
-                <div className="atividades-valores-all-description">
-                    <span>{descricao}</span>
-                </div>
+                <ContainerLabel>
+                    <div className="atividades-valores-all-description">
+                        <span>{descricao}</span>
+                    </div>
+                </ContainerLabel>
             </div>   
             {atividades.map((atividade, index) => {
                 
@@ -139,6 +157,7 @@ function retornaAtividades (atividades, situacao, classe, descricao) {
                             <div className="atividades-valores-icon">
                                 <span>{retornaIcone(atividade.tipo)}</span>
                             </div>
+                            <ContainerLabel>
                             <div className="atividades-valores-all atividades-valores-descricao">
                                 <span>{atividades[index].descricao}</span>
                             </div>
@@ -148,6 +167,7 @@ function retornaAtividades (atividades, situacao, classe, descricao) {
                             <div className="atividades-valores-value atividades-valores-data">
                                 <span>{atividades[index].data}</span>
                             </div>
+                            </ContainerLabel>
                         </div>   
                     );
                 }

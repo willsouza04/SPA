@@ -1,8 +1,5 @@
 .atividades {
-    color: #383838;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
     width:98%;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -26,11 +23,16 @@
 @media(max-width:768px){  
     .atividades {
         width:100%; 
-        margin: 0px 15px 15px 15px; 
     }
 
     .atividades-grid-container {
         grid-template-rows: 30px auto 696px;
+    }
+}
+
+@media(max-width:1262px){
+    .atividades {
+        margin: 0px 15px 15px 15px; 
     }
 }
 
@@ -160,7 +162,6 @@
 
 .atividades-valores-all-description {          
     grid-area: valdescription; 
-    color: #383838; 
     text-align: left;
     margin: auto 0;
 
@@ -203,15 +204,12 @@
 
 .atividades-valores-descricao {
     grid-area: ativdescricao;
-    color: #383838;
 }
 
 .atividades-valores-contato {
     grid-area: ativcontato;
-    color: #383838;
 }
 
 .atividades-valores-data {
     grid-area: ativdata;
-    color: #383838;
 }
